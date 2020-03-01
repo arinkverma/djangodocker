@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'djangodocker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangotodo',
-        'USER': 'djangotodo',
+        'NAME': 'chain',
+        'USER': 'lion',
         'PASSWORD': 'hunter2',
-        'HOST': 'localhost'
+        'HOST': 'db'
     }
 }
 
