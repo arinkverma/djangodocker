@@ -1,0 +1,25 @@
+version: '2'
+services:
+    web:
+        image: "base-image:latest"
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/app
+        links:
+            - db
+        command: python manage.py runserver 0.0.0.0:8000
+
+    db:
+        image: "postgres:9.6"
+        ports:
+            - "5432:5432"
+        volumes:
+            - database-data:/var/lib/postgresql/data/
+        environment:
+            POSTGRES_USER: lion
+            POSTGRES_PASSWORD: hunter2
+            POSTGRES_DB: chain
+
+volumes:
+    database-data: # named volumes can be managed easier using docker-compose
